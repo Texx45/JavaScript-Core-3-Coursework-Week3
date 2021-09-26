@@ -70,3 +70,27 @@ let hogwarts = [
     occupation: "Teacher",
   },
 ];
+
+//! Task 1
+
+function printInfo(array) {
+  array.map((info) => {
+    const { firstName, lastName, house } = info;
+    if (house === "Gryffindor") {
+      console.log(`${firstName} ${lastName}`);
+    }
+  });
+}
+
+//! Task 2
+
+function findTeachersWithPets(array) {
+  array.map((info) => {
+    const { firstName, lastName, pet, occupation } = info;
+    if (pet !== null && occupation === "Teacher") {
+      console.log(`${firstName} ${lastName}`);
+    }
+  });
+}
+
+console.log(findTeachersWithPets(hogwarts));

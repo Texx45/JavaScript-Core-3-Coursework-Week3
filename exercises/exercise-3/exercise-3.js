@@ -6,3 +6,25 @@ let order = [
   { itemName: "Hot Coffee", quantity: 2, unitPrice: 1.0 },
   { itemName: "Hash Brown", quantity: 4, unitPrice: 0.4 },
 ];
+
+function createOrder(array) {
+  console.log("QTY  ITEM   TOTAL");
+  total = 0;
+
+  array.map((item) => {
+    let { itemName, quantity, unitPrice } = item;
+    console.log(
+      quantity,
+      itemName,
+      Number(totalItems(quantity, unitPrice).toFixed(2))
+    );
+    total += Number(totalItems(quantity, unitPrice).toFixed(2));
+  });
+  console.log(total);
+}
+
+createOrder(order);
+
+function totalItems(amount, costPerItem) {
+  return amount * costPerItem;
+}
